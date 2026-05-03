@@ -391,6 +391,7 @@
   .section:nth-child(5) { animation-delay: 0.25s; }
   .section:nth-child(6) { animation-delay: 0.3s; }
   .section:nth-child(7) { animation-delay: 0.35s; }
+  .section:nth-child(8) { animation-delay: 0.4s; }
 </style>
 </head>
 <body>
@@ -452,18 +453,55 @@
       </div>
     </section>
 
-    <!-- Section 2: Goal -->
+    <!-- Section 2: Goal & Traffic -->
     <section class="section">
       <div class="section-header">
         <div class="section-num">2</div>
-        <div class="section-title">מטרת הדף</div>
+        <div class="section-title">מטרת הדף וקהל הכניסה</div>
       </div>
-      <p class="section-desc">החלק הכי חשוב. בלי מטרה ברורה, אין דף נחיתה אפקטיבי.</p>
+      <p class="section-desc">לפני המטרה - מאיפה הקהל מגיע ובאיזה שלב הוא נמצא.</p>
 
       <div class="field">
-        <label>מה המטרה העיקרית של הדף? <span class="required">*</span></label>
-        <span class="hint">מה אתה רוצה שהמבקר יעשה? (השארת פרטים, רכישה, חיוג, הורדה, הרשמה לוובינר וכו')</span>
-        <textarea name="main_goal" rows="3" required></textarea>
+        <label>מאיפה רוב התנועה לדף תגיע? <span class="required">*</span></label>
+        <span class="hint">דף לפייסבוק נבנה אחרת מדף לגוגל - זה משפיע על כל הסגנון</span>
+        <div class="checkbox-grid">
+          <label class="checkbox-item"><input type="checkbox" name="traffic_source" value="פייסבוק/אינסטגרם"><span>פייסבוק / אינסטגרם</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="traffic_source" value="גוגל ממומן"><span>גוגל ממומן</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="traffic_source" value="דיוור/מייל"><span>דיוור / מייל</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="traffic_source" value="וואטסאפ"><span>וואטסאפ</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="traffic_source" value="לינק בביו"><span>לינק בביו</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="traffic_source" value="אורגני/SEO"><span>אורגני / SEO</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>עד כמה הקהל מכיר אותך לפני שנכנס לדף? <span class="required">*</span></label>
+        <span class="hint">קהל קר צריך יותר חינוך והסבר. קהל חם רק דחיפה לפעולה</span>
+        <select name="audience_warmth" required>
+          <option value="">בחר רמת חמימות</option>
+          <option value="קר">קר - לא מכיר אותי בכלל</option>
+          <option value="פושר">פושר - מכיר את הבעיה אבל לא אותי</option>
+          <option value="חמים">חמים - שמע עליי / הגיע מהמלצה</option>
+          <option value="חם">חם - כבר דיבר איתי</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>מה הפעולה הראשית שאתה רוצה שהמבקר יבצע? <span class="required">*</span></label>
+        <span class="hint">פעולה אחת בלבד - השארת פרטים / חיוג / רכישה / קביעת תור</span>
+        <input type="text" name="primary_cta" required>
+      </div>
+
+      <div class="field">
+        <label>יש פעולה משנית?</label>
+        <span class="hint">למי שלא מוכן לפעולה הראשית - לדוגמה: מעבר לוואטסאפ, הורדת מדריך</span>
+        <input type="text" name="secondary_cta">
+      </div>
+
+      <div class="field">
+        <label>אם המבקר היה זוכר רק משפט אחד מהדף - מה הוא צריך להיות?</label>
+        <span class="hint">המסר המרכזי, ה-Big Idea של הדף</span>
+        <textarea name="big_idea" rows="2"></textarea>
       </div>
 
       <div class="field">
@@ -481,6 +519,18 @@
           <label class="checkbox-item"><input type="checkbox" name="lead_dest" value="CRM"><span>מערכת CRM</span></label>
           <label class="checkbox-item"><input type="checkbox" name="lead_dest" value="גוגל שיטס"><span>Google Sheets</span></label>
           <label class="checkbox-item"><input type="checkbox" name="lead_dest" value="אחר"><span>אחר</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>מה קורה מיד אחרי שהלקוח משאיר פרטים?</label>
+        <span class="hint">חשוב לחוויית המשתמש ולמדידת המרות</span>
+        <div class="checkbox-grid">
+          <label class="checkbox-item"><input type="checkbox" name="post_conversion" value="דף תודה"><span>מעבר לדף תודה</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="post_conversion" value="הודעת וואטסאפ"><span>הודעת וואטסאפ אוטומטית</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="post_conversion" value="מייל אוטומטי"><span>מייל אוטומטי</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="post_conversion" value="שיחה מהצוות"><span>שיחה מהצוות</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="post_conversion" value="קביעת פגישה"><span>קביעת פגישה ביומן</span></label>
         </div>
       </div>
 
@@ -516,9 +566,15 @@
       </div>
 
       <div class="field">
-        <label>תאר את הלקוח האחרון המעולה שלך</label>
-        <span class="hint">מאיפה הוא הגיע, מה הוא אמר בשיחה הראשונה, ולמה בחר בך? (זהב לקופי)</span>
+        <label>תאר לקוח מעולה שהיה לך לאחרונה</label>
+        <span class="hint">מאיפה הגיע, מה חיפש, ולמה בחר בך</span>
         <textarea name="best_customer" rows="3"></textarea>
+      </div>
+
+      <div class="field">
+        <label>יש משהו שחשוב לך לא לשדר בדף?</label>
+        <span class="hint">לדוגמה: לא להיראות זול, לא אגרסיבי, לא "שיווקי מדי"</span>
+        <textarea name="avoid" rows="2"></textarea>
       </div>
     </section>
 
@@ -638,10 +694,65 @@
       </div>
     </section>
 
-    <!-- Section 7: Technical -->
+    <!-- Section 7: Form & Future maintenance -->
     <section class="section">
       <div class="section-header">
         <div class="section-num">7</div>
+        <div class="section-title">טופס וניהול עתידי</div>
+      </div>
+      <p class="section-desc">פרטים על הטופס בדף, ועד כמה אתה רוצה לערוך אותו בעצמך אחר כך.</p>
+
+      <div class="field">
+        <label>איזה פרטים חובה לבקש בטופס?</label>
+        <span class="hint">פחות שדות = יותר המרות. בקש רק מה שבאמת צריך</span>
+        <div class="checkbox-grid">
+          <label class="checkbox-item"><input type="checkbox" name="form_fields" value="שם"><span>שם</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="form_fields" value="טלפון"><span>טלפון</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="form_fields" value="מייל"><span>מייל</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="form_fields" value="חברה"><span>שם חברה</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="form_fields" value="תקציב"><span>תקציב</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="form_fields" value="תיאור"><span>תיאור קצר</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>עד כמה תרצה להיות מעורב בעדכון הדף בעתיד?</label>
+        <span class="hint">משפיע על סוג מערכת הניהול שאבנה לך</span>
+        <select name="edit_level">
+          <option value="">בחר רמה</option>
+          <option value="מינימלי">רק לעדכן טקסטים ומחירים מדי פעם</option>
+          <option value="בינוני">להחליף תמונות, להוסיף המלצות באופן קבוע</option>
+          <option value="גבוה">לשנות מבנה, להוסיף סקציות, לשלוט בעיצוב</option>
+          <option value="ללא">לא חשוב לי - אפנה אליך לכל שינוי</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>באיזו תדירות תצטרך לעדכן את התוכן?</label>
+        <select name="update_frequency">
+          <option value="">בחר תדירות</option>
+          <option value="שבועי">שבועי</option>
+          <option value="חודשי">חודשי</option>
+          <option value="רבעוני">פעם ברבעון</option>
+          <option value="נדיר">נדיר מאוד</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>מי כותב את הקופי (הטקסטים)?</label>
+        <select name="copy_owner">
+          <option value="">בחר</option>
+          <option value="אני">אני אספק טקסטים מוכנים</option>
+          <option value="צריך עזרה">אני צריך עזרה בכתיבת הקופי</option>
+          <option value="חלקי">יש לי טיוטה אבל צריך ליטוש</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Section 8: Technical -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-num">8</div>
         <div class="section-title">דרישות טכניות</div>
       </div>
       <p class="section-desc">פרטים שיעזרו לי להעריך עלויות וזמנים.</p>
@@ -760,27 +871,35 @@
   function collectData() {
     const sections = [
       { title: '1. פרטים כלליים', fields: ['full_name','business_name','industry','phone','email','existing_site'] },
-      { title: '2. מטרת הדף', fields: ['main_goal','success_metric','lead_dest','response_time'] },
-      { title: '3. קהל היעד', fields: ['ideal_customer','customer_pain','objections','best_customer'] },
+      { title: '2. מטרת הדף וקהל הכניסה', fields: ['traffic_source','audience_warmth','primary_cta','secondary_cta','big_idea','success_metric','lead_dest','post_conversion','response_time'] },
+      { title: '3. קהל היעד', fields: ['ideal_customer','customer_pain','objections','best_customer','avoid'] },
       { title: '4. ההצעה', fields: ['offer','price','special_offer','included','delivery_time'] },
       { title: '5. בידול ואמינות', fields: ['differentiation','competitors','stats','social_proof'] },
       { title: '6. חומרים קיימים ומיתוג', fields: ['assets','colors','inspirations','style'] },
-      { title: '7. דרישות טכניות', fields: ['domain','integrations','budget','timeline','additional'] }
+      { title: '7. טופס וניהול עתידי', fields: ['form_fields','edit_level','update_frequency','copy_owner'] },
+      { title: '8. דרישות טכניות', fields: ['domain','integrations','budget','timeline','additional'] }
     ];
 
     const labels = {
       full_name: 'שם מלא', business_name: 'שם העסק', industry: 'תחום העסק',
       phone: 'טלפון', email: 'מייל', existing_site: 'אתר קיים',
-      main_goal: 'מטרה עיקרית', success_metric: 'מדד הצלחה',
-      lead_dest: 'יעד לידים', response_time: 'זמן תגובה',
+      traffic_source: 'מקור תנועה', audience_warmth: 'חמימות הקהל',
+      primary_cta: 'פעולה ראשית', secondary_cta: 'פעולה משנית',
+      big_idea: 'מסר מרכזי', success_metric: 'מדד הצלחה',
+      lead_dest: 'יעד לידים', post_conversion: 'מה קורה אחרי המרה',
+      response_time: 'זמן תגובה',
       ideal_customer: 'לקוח אידיאלי', customer_pain: 'כאב הלקוח',
       objections: 'התנגדויות', best_customer: 'לקוח מעולה אחרון',
+      avoid: 'מה לא לשדר',
       offer: 'ההצעה', price: 'מחיר', special_offer: 'מבצע מיוחד',
       included: 'מה כלול', delivery_time: 'זמן אספקה',
       differentiation: '3 סיבות לבידול', competitors: 'מתחרים',
       stats: 'סטטיסטיקות', social_proof: 'הוכחה חברתית',
       assets: 'חומרים קיימים', colors: 'צבעים', inspirations: 'השראה',
-      style: 'סגנון מבוקש', domain: 'דומיין', integrations: 'אינטגרציות',
+      style: 'סגנון מבוקש',
+      form_fields: 'שדות הטופס', edit_level: 'רמת מעורבות בעריכה',
+      update_frequency: 'תדירות עדכונים', copy_owner: 'אחראי על הקופי',
+      domain: 'דומיין', integrations: 'אינטגרציות',
       budget: 'תקציב', timeline: 'לוח זמנים', additional: 'הערות נוספות'
     };
 
